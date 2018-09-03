@@ -1,0 +1,50 @@
+C:\Users\a1196\Desktop\GroupChat\GroupChat_Client\GroupChat_Client\bin\Debug\GroupChat_Client.exe.config
+C:\Users\a1196\Desktop\GroupChat\GroupChat_Client\GroupChat_Client\bin\Debug\GroupChat_Client.exe
+C:\Users\a1196\Desktop\GroupChat\GroupChat_Client\GroupChat_Client\bin\Debug\GroupChat_Client.pdb
+C:\Users\a1196\Desktop\GroupChat\GroupChat_Client\GroupChat_Client\obj\Debug\GroupChat_Client.csprojResolveAssemblyReference.cache
+C:\Users\a1196\Desktop\GroupChat\GroupChat_Client\GroupChat_Client\obj\Debug\GroupChat_Client.Form1.resources
+C:\Users\a1196\Desktop\GroupChat\GroupChat_Client\GroupChat_Client\obj\Debug\GroupChat_Client.Properties.Resources.resources
+C:\Users\a1196\Desktop\GroupChat\GroupChat_Client\GroupChat_Client\obj\Debug\GroupChat_Client.csproj.GenerateResource.cache
+C:\Users\a1196\Desktop\GroupChat\GroupChat_Client\GroupChat_Client\obj\Debug\GroupChat_Client.csproj.CoreCompileInputs.cache
+C:\Users\a1196\Desktop\GroupChat\GroupChat_Client\GroupChat_Client\obj\Debug\GroupChat_Client.exe
+C:\Users\a1196\Desktop\GroupChat\GroupChat_Client\GroupChat_Client\obj\Debug\GroupChat_Client.pdb
+C:\Users\a1196\Desktop\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\bin\Debug\GroupChat_Client.exe.config
+C:\Users\a1196\Desktop\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\bin\Debug\GroupChat_Client.exe
+C:\Users\a1196\Desktop\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\bin\Debug\GroupChat_Client.pdb
+C:\Users\a1196\Desktop\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.csprojResolveAssemblyReference.cache
+C:\Users\a1196\Desktop\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.Form1.resources
+C:\Users\a1196\Desktop\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.Properties.Resources.resources
+C:\Users\a1196\Desktop\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.csproj.GenerateResource.cache
+C:\Users\a1196\Desktop\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.csproj.CoreCompileInputs.cache
+C:\Users\a1196\Desktop\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.exe
+C:\Users\a1196\Desktop\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.pdb
+C:\Users\a1196\Desktop\GroupChat_Client(Windows)\GroupChat_Client\bin\Debug\GroupChat_Client.exe.config
+C:\Users\a1196\Desktop\GroupChat_Client(Windows)\GroupChat_Client\bin\Debug\GroupChat_Client.exe
+C:\Users\a1196\Desktop\GroupChat_Client(Windows)\GroupChat_Client\bin\Debug\GroupChat_Client.pdb
+C:\Users\a1196\Desktop\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.csprojResolveAssemblyReference.cache
+C:\Users\a1196\Desktop\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.Form1.resources
+C:\Users\a1196\Desktop\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.Properties.Resources.resources
+C:\Users\a1196\Desktop\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.csproj.GenerateResource.cache
+C:\Users\a1196\Desktop\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.csproj.CoreCompileInputs.cache
+C:\Users\a1196\Desktop\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.exe
+C:\Users\a1196\Desktop\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.pdb
+F:\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\bin\Debug\GroupChat_Client.exe.config
+F:\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\bin\Debug\GroupChat_Client.exe
+F:\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\bin\Debug\GroupChat_Client.pdb
+F:\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.csprojResolveAssemblyReference.cache
+F:\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.Form1.resources
+F:\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.Properties.Resources.resources
+F:\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.csproj.GenerateResource.cache
+F:\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.csproj.CoreCompileInputs.cache
+F:\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.exe
+F:\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.pdb
+D:\My Information\雲科\作業系統\作業\hw2\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\bin\Debug\GroupChat_Client.exe.config
+D:\My Information\雲科\作業系統\作業\hw2\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\bin\Debug\GroupChat_Client.exe
+D:\My Information\雲科\作業系統\作業\hw2\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\bin\Debug\GroupChat_Client.pdb
+D:\My Information\雲科\作業系統\作業\hw2\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.csprojResolveAssemblyReference.cache
+D:\My Information\雲科\作業系統\作業\hw2\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.Form1.resources
+D:\My Information\雲科\作業系統\作業\hw2\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.Properties.Resources.resources
+D:\My Information\雲科\作業系統\作業\hw2\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.csproj.GenerateResource.cache
+D:\My Information\雲科\作業系統\作業\hw2\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.csproj.CoreCompileInputs.cache
+D:\My Information\雲科\作業系統\作業\hw2\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.exe
+D:\My Information\雲科\作業系統\作業\hw2\GroupChat\GroupChat_Client(Windows)\GroupChat_Client\obj\Debug\GroupChat_Client.pdb
