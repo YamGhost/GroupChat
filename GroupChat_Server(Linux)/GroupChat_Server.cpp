@@ -1,7 +1,6 @@
 #include "GroupChat_Server.h"
 
-GroupChat_Server::GroupChat_Server(unsigned short port) : Server(port){
-
+GroupChat_Server::GroupChat_Server(uint16_t port) : Server(port){
 
 }
 
@@ -21,7 +20,7 @@ void GroupChat_Server::Server_Handle(future<void> exitSignal){ //Server處理程
 void GroupChat_Server::ReadSocket(future<void> exitSignal){
 
 	//Socket檔案字符
-	int new_socket;
+	int32_t new_socket;
 	struct timeval timeout;
 	struct sockaddr_in client_addr;
 	socklen_t client_addr_len;
@@ -29,20 +28,26 @@ void GroupChat_Server::ReadSocket(future<void> exitSignal){
 	fd_set readfd_bak;
 	
 	//Socket檔案字符設定
-	int maxfd = serverSocket;
+	int32_t maxfd = serverSocket;
 	FD_ZERO(&readfd);
 	FD_ZERO(&readfd_bak);
 	FD_SET(serverSocket, &readfd_bak);
 	
 	//Socket資源
-	int res, i;
-	int new_clientsocket;
-	int recv_len;
-	char output[BUF_LEN];
+	int32_t res, i;
+	int32_t new_clientsocket;
+	int32_t recv_len;
+//	char output[BUF_LEN];
+	//struct Packet output;
+	string output;
+	wchar_t str[BUF_LEN];
+	//FILE *fp = tmpfile();
+	FILE *fp = fopen("aa.txt", "wr");
+	char fbuf[BUF_LEN];
+	bool flag = false;
 
-	
-	list<string> groupmessage_tmp; //訊息容器
-	map<int, string> clientMap; //Socket和IP對應
+	list<FILE *> groupPacket; //訊息容器
+	map<int32_t, string> clientMap; //Socket和IP對應
 
 	while(exitSignal.wait_for(chrono::seconds(0)) == future_status::timeout){ //外部中止執行緒
 
@@ -86,7 +91,7 @@ void GroupChat_Server::ReadSocket(future<void> exitSignal){
 					}
 				
 					//插入Socket、IP對應
-					clientMap.insert(pair<int, string>(new_socket, inet_ntoa(client_addr.sin_addr)));
+					clientMap.insert(pair<int32_t, string>(new_socket, inet_ntoa(client_addr.sin_addr)));
 					cout << "ipv4 = " << inet_ntoa(client_addr.sin_addr) << endl;
 					//cout << "ipport" << ntohs(client_addr.sin_port) << endl;
 					setSockNonBlock(new_socket); //設定Socket(Non Block)
@@ -99,16 +104,34 @@ void GroupChat_Server::ReadSocket(future<void> exitSignal){
 
 				} else { //Socket為Client
 				
-					recv_len = recv(i, output, BUF_LEN, 0); //接收封包
-					cout << "recv clienti(" << recv_len << ") : " << output << endl;
+					//cout << "RECV HANDL" << endl;
+					recv_len = TCP_File_Recv(i, fp);
 
-			
+					
+					
+					//recv_len = recv(i, (void *)fbuf, sizeof(fbuf), 0); //接收封包
+					//fread(fbuf, sizeof(), recv_len, fp);
+
+					//fclose(fp);
+					//bool f =  TCP_File_Send(i, fp);
+					cout << "recv clienti(" << recv_len << ") : " << "" << endl;
+					
+					// FILE *fp = fopen("test.txt", "r");
+					// if(flag != true){
+						
+					// 	if(fp == NULL)
+					// 		printf("file no exist\n");
+					// 	else
+					// 		TCP_File_Send(i, fp);
+					// }	
+					// printf("file out send\n");
+					
 					if(recv_len < 0 && errno != EINTR){ //移除斷線Client
 						shutdown(i, SHUT_RDWR);	
 						close(i);
 						FD_CLR(i, &readfd_bak);
 					
-						map<int, string>::iterator key = clientMap.find(i); //移除Socket、IP對應
+						map<int32_t, string>::iterator key = clientMap.find(i); //移除Socket、IP對應
 						if(key != clientMap.end())
 							clientMap.erase(key);		
 					}
@@ -116,9 +139,9 @@ void GroupChat_Server::ReadSocket(future<void> exitSignal){
 					//封包接收成功	
 					if(recv_len > 0){
 			
-						groupmessage_tmp.push_back(output); //紀錄Message
-						Broadcast(readfd_bak, maxfd, i, groupmessage_tmp, clientMap); //廣播Message到聊天室(已連線IP)
-						groupmessage_tmp.clear(); //刪除Message紀錄
+						groupPacket.push_back(fp); //紀錄Message
+						Broadcast(readfd_bak, maxfd, i, groupPacket, clientMap); //廣播Message到聊天室(已連線IP)
+						groupPacket.clear(); //刪除Message紀錄
 					}		
 				}
 			}		
@@ -129,18 +152,26 @@ void GroupChat_Server::ReadSocket(future<void> exitSignal){
 	}
 }
 
-int GroupChat_Server::Broadcast(fd_set &fd, int maxfd, int &sourceSocket, list<string> &message, map<int, string> &ipSocketPair){ //廣播封包到聊天室
+int32_t GroupChat_Server::Broadcast(fd_set &fd, int32_t maxfd, int32_t &sourceSocket, list<FILE *> &packet, map<int32_t, string> &ipSocketPair){ //廣播封包到聊天室
 
-	int count = 0; //廣播數量
-	string mix, ip = ipSocketPair[sourceSocket];
-	for(int i = 0; i <= maxfd; i++){ //搜尋Client Socket
+	int32_t count = 0; //廣播數量
+	string ip = ipSocketPair[sourceSocket];
+	string mix; 
+	for(int32_t i = 0; i <= maxfd; i++){ //搜尋Client Socket
 	
 		if(i != serverSocket && FD_ISSET(i, &fd)){ //Client Socket(其一)
-			for(list<string>::iterator iter = message.begin(); iter != message.end(); iter++){
+			for(list<FILE *>::iterator iter = packet.begin(); iter != packet.end(); iter++){
 		
-				mix = "@" + ip + "@\n" + (*iter); //組合IP和訊息
-				if(mix.length() > 0) //傳送訊息
-					send(i, mix.c_str(), mix.length() + 1, 0);
+				//int32_t len = 
+				//mix.type = (*iter).type;
+				//mix = ("@" + ip + "@\n" + (*iter)); //組合IP和訊息
+				//memcpy(mix.message, (*iter).message, 10);
+				//if(mix.message.length() > 0) //傳送訊息
+				//printf("*********%s***********\n",(*iter).message);
+					//send(i, (void *)(*iter), sizeof(packet), 0);
+				TCP_File_Send(i, (*iter));
+
+				fclose((*iter));
 			}
 			count++;
 		}

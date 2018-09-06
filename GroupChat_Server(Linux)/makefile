@@ -2,7 +2,7 @@
 
 CC = g++
 CFLAGS_LINK = -std=c++11 -pthread -o
-CFLAGS_COMP = -std=c++11 -c
+CFLAGS_COMP = -g -std=c++11 -c
 SERVER_NAME = server 
 SERVER_OBJ =  server_main.o server.o GroupChat_Server.o
 
