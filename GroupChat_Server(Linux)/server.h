@@ -13,27 +13,31 @@
 #include <chrono>
 #include <fcntl.h>
 #include <errno.h>
-#define BUF_LEN 256
+#include <cstdio>
+#define BUF_LEN 1024
 
 using namespace std;
 
 class Server{
 
 	public:
-		Server(unsigned short port);
+		Server(uint16_t port);
 		~Server();
 
-		int TCP_Set(unsigned short port);
-		int TCP_Run();
+		int32_t TCP_Set(uint16_t port);
+		int32_t TCP_Run();
+
+		int32_t TCP_File_Send(int32_t fd, FILE *fp);
+		int32_t TCP_File_Recv(int32_t fd, FILE *fp);
 		
-		void setSockNonBlock(int socket);
-		int updateMaxfd(fd_set fd, int maxfd);
+		void setSockNonBlock(int32_t socket);
+		int32_t updateMaxfd(fd_set fd, int32_t maxfd);
 		virtual void Server_Handle(future<void> exitSignal) = 0;
 
 		promise<void> exitTrigger;
 		thread packetHandle;
 	protected:
-		int serverSocket;
+		int32_t serverSocket;
 		struct sockaddr_in serverInfo;
 		
 };
