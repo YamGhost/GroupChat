@@ -1,32 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Runtime.InteropServices;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GroupChat_Client.Net {
-    class TCP_Client {
+
+    class SuportType {
+
+        [Serializable] public enum Type { cmd, messages };
+
+        [Serializable]
+        [StructLayout(LayoutKind.Sequential, Pack = 0)]
+        public struct Packet {
+            public Type type;
+            //public string message;
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1024)]
+            public char[] message;
+        } 
+    }
+
+    class TCP_Client : SuportType {
 
         public Socket socket { get; private set; }
         private IPEndPoint ipEndPoint;
 
         private string ipv4;
         private UInt16 port;
-        private readonly int buf_len; 
+        private readonly int buf_len;
 
         //public enum PacketType { cmd, message };
         //public enum CmdType { stopRecv, stopSend };
+        
 
         public TCP_Client(string ipv4, UInt16 port) {
 
             this.ipv4 = ipv4;
             this.port = port;
-            buf_len = 256;
+            buf_len = 1024;
         }
 
         ~TCP_Client() {
@@ -114,17 +133,23 @@ namespace GroupChat_Client.Net {
             byte[] buf = new byte[buf_len];
             int recvlen;
 
+            Packet packetBuf;
+
             try {
 
                 while (true) {
 
                     if (socket.Receive(buf, SocketFlags.Peek) > 0) { //成功接收封包
-                    
 
                         recvlen = socket.Receive(buf);
+                        //BinaryFormatter binaryBuf = new BinaryFormatter();
+                        //MemoryStream stream = new MemoryStream(buf);
+                        //packetBuf = (Packet)binaryBuf.Deserialize(stream);
+
+                        //stream.Close();
 
                         Form1.output.Invoke(new Action(() => {  //輸出至聊天室
-                            Form1.output.Text += Encoding.ASCII.GetString(buf);
+                            Form1.output.Text += Encoding.UTF8.GetString(buf, 0, recvlen);
                             Form1.output.Text += "\n";
 
                             Form1.output.ScrollBars = RichTextBoxScrollBars.Vertical;

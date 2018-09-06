@@ -45,6 +45,7 @@
             this.LinkButton = new System.Windows.Forms.Button();
             this.IP_TextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.fileButton = new System.Windows.Forms.Button();
             this.FuncTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ChatContainer)).BeginInit();
@@ -246,6 +247,7 @@
             // 
             this.CheckFlowPanel.Controls.Add(this.SendButton);
             this.CheckFlowPanel.Controls.Add(this.EmptyButton);
+            this.CheckFlowPanel.Controls.Add(this.fileButton);
             this.CheckFlowPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CheckFlowPanel.Location = new System.Drawing.Point(0, 0);
             this.CheckFlowPanel.Name = "CheckFlowPanel";
@@ -322,6 +324,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Server IP:";
             // 
+            // fileButton
+            // 
+            this.fileButton.Location = new System.Drawing.Point(3, 61);
+            this.fileButton.Name = "fileButton";
+            this.fileButton.Size = new System.Drawing.Size(75, 23);
+            this.fileButton.TabIndex = 1;
+            this.fileButton.Text = "File";
+            this.fileButton.UseVisualStyleBackColor = true;
+            this.fileButton.Click += new System.EventHandler(this.fileButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -330,6 +342,7 @@
             this.Controls.Add(this.FuncTab);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.LoginIn);
+            this.ImeMode = System.Windows.Forms.ImeMode.On;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(550, 550);
             this.MinimumSize = new System.Drawing.Size(550, 550);
@@ -386,6 +399,7 @@
         private System.Windows.Forms.Button LoginoutButton;
         private System.Windows.Forms.RichTextBox OutputLabel;
         private System.Windows.Forms.RichTextBox InputTextBox;
+        private System.Windows.Forms.Button fileButton;
     }
 }
 
