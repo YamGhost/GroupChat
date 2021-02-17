@@ -36,7 +36,7 @@ cd ".\GroupChat_Client(Windows)\GroupChat_Client\bin\Debug"
 </p>
 
 6. **登出聊天室**  
-按下客戶端loginout即可登出聊天室回到登入畫面，服務端檔案描述符(File descriptor, FD)數量也由4變為3，代表客戶端已下線。
+按下客戶端logout即可登出聊天室回到登入畫面，服務端檔案描述符(File descriptor, FD)數量也由4變為3，代表客戶端已下線。
 <p align="center">
   <img src="https://github.com/YamGhost/GroupChat/blob/master/fig/%E7%99%BB%E5%87%BA%E8%81%8A%E5%A4%A9%E5%AE%A4.png"  width="80%"/>
 </p>
